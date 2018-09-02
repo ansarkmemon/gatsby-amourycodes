@@ -20,9 +20,16 @@ const SimpleButton = (props) => {
   return (
     <div>
       <StyledButton>
-        <Link to={props.link} style={{ textDecoration: "none", color: "0b2027" }}>
-          {props.content}
-        </Link>
+        { props.gatsbyLink 
+          ? 
+          <Link to={props.link} style={{ textDecoration: "none", color: "0b2027" }}>
+            {props.content}
+          </Link>
+          :
+          <a href={props.link} style={{ textDecoration: "none", color: "0b2027" }}>
+            {props.content}
+          </a>
+        }
       </StyledButton>
     </div>
   )

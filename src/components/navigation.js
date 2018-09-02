@@ -2,21 +2,25 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 
-import { fontFamily, cream, neonGreen } from '../layouts/variables';
+import { fontFamily, cream, neonGreen, darkBlue } from '../layouts/variables';
+import './navigation.css';
 
 
 const List = styled.ul`
+  background: ${darkBlue};
   list-style: none;
   font-family: ${fontFamily};
   max-width: 90%;
   display: flex;
   margin-top: 20px;
+  padding: 10px 0;
   justify-content: flex-end;
 `;
 
 const ListItem = styled.li`
   color: ${ cream };
   padding: 0 10px;
+  margin-bottom: 0; 
 `;
 
 const Slash = styled.span`
@@ -26,12 +30,13 @@ const Slash = styled.span`
 
 const LinkStyle = {
   color: cream,
-  textDecoration: "none"
+  textDecoration: "none",
+  position: 'relative'
 };
 
 
 const Navigation = () => {
-  return <div>
+  return <div style={{ position: "fixed", right: "5%", zIndex: '50' }}>
       <List>
         <ListItem>
           <Link to="/about/" style={LinkStyle} activeClassName="active">

@@ -6,10 +6,11 @@ import SimpleButton from '../components/simpleButton';
 import MainSection from '../layouts/mainSection';
 import ProjectCard from '../layouts/projectCard';
 import SkillAreaCard from '../layouts/skillAreaCard';
-
+import resumeFile from '../assets/files/2018_Ind_noi_CV Design.pdf';
 import raizuliImg from '../assets/projects/raizuli-image.jpg';
 import khushiImg from '../assets/projects/khushi-jewellers.jpg';
 import EducationCard from '../layouts/educationCard';
+import EndSection from '../layouts/endSection';
 
 
 
@@ -54,6 +55,26 @@ class IndexPage extends Component {
         university: 'Birla Institute of Technology - Mesra, Ranchi, India'
       },
     ],
+    work: [
+      {
+        id: "001",
+        degreeTitle: 'Web Developer',
+        duration: '2015 - Present',
+        university: 'The Raizuli Design Services, Dubai'
+      },
+      {
+        id: "002",
+        degreeTitle: 'Product Manager',
+        duration: '2013 - 2015',
+        university: 'BDH Middle East, Dubai'
+      },
+      {
+        id: "003",
+        degreeTitle: 'Product Specialist',
+        duration: '2010 - 2012',
+        university: 'Metropolitan Medical Marketing, Dubai'
+      },
+    ]
   }
 
   render() {
@@ -71,7 +92,11 @@ class IndexPage extends Component {
 
     const renderEducation = this.state.education.map( education => {
       return <EducationCard key={education.id} education={education} />
-    })
+    });
+
+    const renderWork = this.state.work.map( education => {
+      return <EducationCard key={education.id} education={education} />
+    });
 
     return (
       <div>
@@ -88,13 +113,13 @@ class IndexPage extends Component {
             Eaque distinctio obcaecati iste quam pariatur vitae consequuntur
             accusamus enim ut deleniti! Neque ut ipsa exercitationem culpa?
           </p>
-          <SimpleButton link="/about/" content="Read More" />
+          <SimpleButton gatsbyLink={true} link="/about/" content="Read More" />
         </MainSection>
 
         <MainSection title="Projects">
           {renderProjects}
 
-          <SimpleButton link="/projects/" content="All Projects" />
+          <SimpleButton gatsbyLink={true} link="/work/" content="All Projects" />
         </MainSection>
 
         <MainSection title="Skills">
@@ -119,9 +144,14 @@ class IndexPage extends Component {
 
         <MainSection title="Education">
           { renderEducation }
+
+          <SimpleButton gatsbyLink={false} link={resumeFile} content="View My Resume"/>
         </MainSection>
 
-        <MainSection title="Experience" />
+        <EndSection title="Experience">
+            { renderWork }
+        </EndSection>
+
       </div>
     )
   }
