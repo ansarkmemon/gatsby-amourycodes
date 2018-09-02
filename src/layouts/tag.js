@@ -1,12 +1,15 @@
 import React from 'react'
 import styled from 'styled-components';
 
+import { fontFamily, darkBlue, neonGreen } from './variables';
+
 const StyledTag = styled.span`
-  background: #4cff00;
+  border: 1px solid ${neonGreen};
+  border-radius: 3px;
   padding: 2px 9px;
   font-size: 0.8em;
-  color: #0b2027;
-  font-family: 'Space Mono', monospace;
+  color: ${ neonGreen };
+  font-family: ${ fontFamily };
   margin: 5px;
 `
 

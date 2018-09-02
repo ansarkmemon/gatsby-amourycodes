@@ -2,9 +2,12 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 
+import { fontFamily, cream, neonGreen } from '../layouts/variables';
+
+
 const List = styled.ul`
   list-style: none;
-  font-family: 'Space Mono', monospace;
+  font-family: ${fontFamily};
   max-width: 90%;
   display: flex;
   margin-top: 20px;
@@ -12,17 +15,17 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  color: #f6f1d1;
+  color: ${ cream };
   padding: 0 10px;
 `;
 
 const Slash = styled.span`
-  color: #4cff00;
+  color: ${ neonGreen };
   font-weight: 700;
 `
 
 const LinkStyle = {
-  color: "#f6f1d1",
+  color: cream,
   textDecoration: "none"
 };
 

@@ -2,17 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import Tag from './tag';
 
+
+import { fontRoboto, cream } from './variables';
+
 const StyledCard = styled.div`
   width: 100%;
   border-radius: 10px;
-  background-image: ${props => props.image ? `url(${props.image})` : 'none' };
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   position: relative;
   min-height: 150px;
+  max-height: 150px;
   overflow: hidden;
   margin: 20px 0;
+
 
   &:first-child {
     margin: 0;
@@ -25,20 +26,32 @@ const OverlayCard = styled.div`
   height: 100%;
   left: 0;
   top: 0;
-  background: rgba(11, 32, 39, 0.8);
-  transition: background 0.3s ease-out;
+  background-image: ${props =>
+    props.image
+      ? `linear-gradient(rgba(11, 32, 39, 0.8), rgba(11, 32, 39, 0.8)), url(${ props.image })`
+      : 'none'};
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.5s ease-out;
 
   &:hover {
-    background: rgba(11, 32, 39, 0.5);
+    transform: scale(1.2);
+    background-image: ${props =>
+      props.image
+        ? `linear-gradient(rgba(11, 32, 39, 0.5), rgba(11, 32, 39, 0.5)), url(${ props.image })`
+        : 'none'};
   }
 `
 
 const ProjectTitle = styled.h3`
-  font-weight: 400;
-  font-family: 'Space Mono', monospace;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: ${ cream };
+  font-family: ${ fontRoboto };
   padding-bottom: 20px;
   margin-bottom: 0;
-  color: #4cff00;
+  letter-spacing: 0.08em;
   font-size: 0.9em;
 
 `
@@ -48,6 +61,12 @@ const ContentBox = styled.div`
   top: 50%;
   left: 10%;
   transform: translateY(-50%);
+`;
+
+const TagsBox = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 `
 
 const ProjectLink = {
@@ -61,16 +80,18 @@ const ProjectCard = (props) => {
 
   return (
     <StyledCard {...props}>
-      <OverlayCard>
+      <OverlayCard {...props}></OverlayCard>
         <ContentBox>
           <ProjectTitle>
             <a href={props.siteLink} target="_blank" style={ProjectLink}>
               {props.title}
             </a>
           </ProjectTitle>
-          { renderTags }
+
+          <TagsBox>
+            { renderTags }
+          </TagsBox>
         </ContentBox>
-      </OverlayCard>
     </StyledCard>
   )
 }

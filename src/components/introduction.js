@@ -2,11 +2,14 @@ import React from 'react'
 import styled from 'styled-components';
 import Button from './button';
 
+import { fontFamily, fontRoboto, neonGreen, cream } from '../layouts/variables';
+
+
 const IntroductionDiv = styled.div`
-  color: #f6f1d1;
-  font-family: 'Space Mono', serif;
+  color: ${ cream };
+  font-family: ${ fontRoboto };
   font-size: 1em;
-  font-weight: 400;
+  font-weight: 300;
   min-height: 90vh;
   line-height: 1.6em;
   position: relative;
@@ -17,7 +20,7 @@ const IntroductionDiv = styled.div`
   }
 `
 const Slash = styled.span`
-  color: #4cff00;
+  color: ${ neonGreen };
   font-weight: 700;
 `
 
@@ -43,7 +46,7 @@ const Introduction = () => {
 
         <p>
           I'm{' '}
-          <strong style={{ fontWeight: '700' }}>
+          <strong style={{ fontWeight: '500' }}>
             Ansar Memon <Slash> / </Slash>Amoury
           </strong>{' '}
           _ a full-stack software engineer with an eye for well designed

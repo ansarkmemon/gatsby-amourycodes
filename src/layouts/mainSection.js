@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { fontFamily, cream, neonGreen, fontRoboto } from './variables';
+
+
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center; 
-  margin-top: 50px;
+  margin-top: 150px;
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -16,20 +19,21 @@ const StyledSection = styled.section`
 
 const StyledDescription = styled.div`
   margin-left: 30px;
-  color: #f6f1d1;
+  color: ${ cream };
+  font-family: ${ fontRoboto };
 
   @media (min-width: 768px) {
     flex: 3;
-    border-left: 3px solid #4cff00;
+    border-left: 3px solid ${ neonGreen };
     padding-left: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 150px;
   }
 `
 
 const StyledTitle = styled.h2`
   font-size: 0.9em;
-  color: #4cff00;
-  font-family: 'Space Mono', monospace;
+  color: ${ neonGreen };
+  font-family: ${fontFamily};
   text-transform : uppercase;
   letter-spacing: 0.09em;
   position: relative;
@@ -37,7 +41,7 @@ const StyledTitle = styled.h2`
 
   @media (min-width: 768px) {
     text-align: right;
-    color: #f6f1d1;
+    color: ${ cream };
   }
 
   &:after {
@@ -47,7 +51,7 @@ const StyledTitle = styled.h2`
       border-radius: 50%;
       width: 20px;
       height: 20px;
-      background: #4cff00;
+      background: ${ neonGreen };
       right: -61px;
       top: 0;
     }
@@ -77,3 +81,4 @@ const MainSection = (props) => {
 }
 
 export default MainSection;
+ 

@@ -2,15 +2,17 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 
+import { neonGreen, darkBlue } from '../layouts/variables';
+
 const StyledButton = styled.button`
   font-size: 0.8em;
-  color: #0b2027;
-  border: 2px solid #0b2027;
+  color: ${ darkBlue };
+  border: 2px solid ${darkBlue};
   padding: 5px 10px;
-  background: #4cff00;
+  background: ${ neonGreen };
   display: inline-block;
   z-index: 2;
-  box-shadow: -6px 5px 0 0 #efd0ca, -2px 1px 0 1px #0b2027;
+  box-shadow: -6px 5px 0 0 #efd0ca, -2px 1px 0 1px ${darkBlue};
   transition: all 0.3s ease-out;
 
   &:hover {

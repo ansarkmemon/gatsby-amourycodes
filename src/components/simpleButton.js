@@ -2,13 +2,18 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 
+import { fontFamily, neonGreen, darkBlue } from '../layouts/variables';
+
+
+
 const StyledButton = styled.button`
   font-size: 0.8em;
-  background: #4cff00
-  color: #0b2027;
-  border: 2px solid #0b2027;
+  background: ${neonGreen}
+  color: ${darkBlue};
+  border: 2px solid ${darkBlue};
   padding: 5px 10px;
   display: inline-block;
+  font-family: ${fontFamily}
 `
 
 const SimpleButton = (props) => {
