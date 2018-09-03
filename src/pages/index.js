@@ -78,6 +78,7 @@ class IndexPage extends Component {
   }
 
   render() {
+
     const renderProjects = this.state.projects.map(project => {
       return (
         <ProjectCard
@@ -156,5 +157,21 @@ class IndexPage extends Component {
     )
   }
 }
+
+export const query = graphql`
+  query IndexQuery {
+    allMarkdownRemark {
+      edges {
+        node {
+          html,
+          frontmatter {
+            title
+            date      
+          }
+        }
+      }
+    } 
+  }
+`
 
 export default IndexPage;

@@ -1,22 +1,38 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import { fontFamily, neonGreen, cream } from '../layouts/variables';
+import { fontFamily, neonGreen, cream } from '../layouts/variables'
 
 const FooterWrapper = styled.footer`
-  border: 2px solid white;
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: space-between;
   padding: 30px 30px;
+  margin-top: 150px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `
 
 const ContactsBox = styled.div`
   display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
 `
 
 const ContactText = styled.p`
   padding: 0 20px;
+  font-family: ${fontFamily};
+  color: ${cream};
+  margin-bottom: 0;
 `
 
 const TaglineBox = styled.p`
@@ -27,6 +43,11 @@ const TaglineBox = styled.p`
   margin-bottom: 0;
 `
 
+const linkStyle = {
+  color: 'inherit',
+  textDecoration: 'none',
+}
+
 const Footer = () => {
   return (
     <FooterWrapper>
@@ -34,12 +55,26 @@ const Footer = () => {
         Handcrafted by <strong>Amoury</strong> using Gatsby Generator
       </TaglineBox>
       <ContactsBox>
-        <ContactText>Email</ContactText>
-        <ContactText>Email</ContactText>
-        <ContactText>Email</ContactText>
-        <ContactText>Email</ContactText>
-        <ContactText>Email</ContactText>
-        <ContactText>Email</ContactText>
+        <ContactText>
+          <a href="mailto:amourycodes@gmail.com" style={linkStyle}>
+            Email
+          </a>
+        </ContactText>
+        <ContactText>
+          <a href="www.linkedin.com/in/amoury" target="_blank" style={linkStyle}>
+            LinkedIn
+          </a>
+        </ContactText>
+        <ContactText>
+          <a href="https://github.com/amoury" target="_blank" style={linkStyle}>
+            Github
+          </a>
+        </ContactText>
+        <ContactText>
+          <a href="https://codepen.io/amoury/" target="_blank" style={linkStyle}>
+            Codepen
+          </a>
+        </ContactText>
       </ContactsBox>
     </FooterWrapper>
   )
