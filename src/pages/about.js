@@ -9,19 +9,5 @@ const About = ({data}) => {
   )
 }
 
-export const query = graphql`
-  query AboutQuery {
-    allMarkdownRemark {
-      edges {
-        node {
-          html
-          frontmatter {
-            title
-            date
-          }
-        }
-      }
-    }
-  }
-`
+
 export default About

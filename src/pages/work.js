@@ -19,20 +19,5 @@ const Work = ({ data }) => {
   )
 }
 
-export const query = graphql`
-  query AllQuery {
-    allMarkdownRemark {
-      edges {
-        node {
-          html
-          frontmatter {
-            title
-            date
-          }
-        }
-      }
-    }
-  }
-`
 
 export default Work

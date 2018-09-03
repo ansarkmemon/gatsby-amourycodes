@@ -26,9 +26,9 @@ const OverlayCard = styled.div`
   height: 100%;
   left: 0;
   top: 0;
-  background-image: ${props =>
-    props.image
-      ? `linear-gradient(rgba(11, 32, 39, 0.8), rgba(11, 32, 39, 0.8)), url(${ props.image })`
+  background-image: ${ props =>
+    props.publicURL
+      ? `linear-gradient(rgba(11, 32, 39, 0.8), rgba(11, 32, 39, 0.8)), url(${ props.publicURL })`
       : 'none'};
   background-repeat: no-repeat;
   background-position: center;
@@ -37,9 +37,9 @@ const OverlayCard = styled.div`
 
   &:hover {
     transform: scale(1.2);
-    background-image: ${props =>
-      props.image
-        ? `linear-gradient(rgba(11, 32, 39, 0.5), rgba(11, 32, 39, 0.5)), url(${ props.image })`
+    background-image: ${ props =>
+      props.publicURL
+        ? `linear-gradient(rgba(11, 32, 39, 0.5), rgba(11, 32, 39, 0.5)), url(${ props.publicURL })`
         : 'none'};
   }
 `
@@ -75,16 +75,16 @@ const ProjectLink = {
 }
 
 const ProjectCard = (props) => {
-
-  const renderTags = props.tags.map( tag => <Tag key={tag} text={tag} />)
+  const { siteLink, title, tags, image } = props.project;
+  const renderTags = tags.map( tag => <Tag key={tag} text={tag} />)
 
   return (
-    <StyledCard {...props}>
-      <OverlayCard {...props}></OverlayCard>
+    <StyledCard>
+      <OverlayCard {...props.project.image}></OverlayCard>
         <ContentBox>
           <ProjectTitle>
-            <a href={props.siteLink} target="_blank" style={ProjectLink}>
-              {props.title}
+            <a href={siteLink} target="_blank" style={ProjectLink}>
+              {title}
             </a>
           </ProjectTitle>
 
