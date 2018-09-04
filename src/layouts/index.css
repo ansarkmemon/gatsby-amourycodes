@@ -628,3 +628,22 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+
+
+.green-highlight {
+  color: #4cff00;
+}
+
+.about_section-title {
+  color: #4cff00;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+@media (min-width: 768px) {
+  .about_section-title {
+    margin-left: -20px;
+  }
+}

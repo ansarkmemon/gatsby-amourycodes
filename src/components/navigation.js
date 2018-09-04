@@ -36,7 +36,7 @@ const LinkStyle = {
 
 
 const Navigation = () => {
-  return <div style={{ position: "fixed", right: "5%", zIndex: '50' }}>
+  return <div style={{ position: "fixed", right: "5%", top:"5%", zIndex: '50' }}>
       <List>
         <ListItem>
           <Link to="/about/" style={LinkStyle} activeClassName="active">

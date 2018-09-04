@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
 import Introduction from '../components/introduction';
@@ -81,7 +81,7 @@ export default Home
 
 export const IndexQuery = graphql`
          query HomeQuery {
-           projects: allMarkdownRemark(filter: { frontmatter: { type: { eq: "project" } } }) {
+           projects: allMarkdownRemark(filter: { frontmatter: { type: { eq: "project" } } }, limit: 3) {
              edges {
                node {
                  frontmatter {
