@@ -11,7 +11,6 @@ import EducationCard from '../layouts/educationCard';
 import EndSection from '../layouts/endSection';
 
 const Home = (props) => {
-  console.log(props.data);
   if(!props.data) return <div>"Error"</div>
   const { education, projects, work, skills } = props.data;
 
@@ -35,33 +34,23 @@ const Home = (props) => {
     return <SkillAreaCard key={ frontmatter.title } title={frontmatter.title} skills={frontmatter.skillList} />
   });
 
-  return (
-    <div>
+  const createMarkup = () => ({ __html: props.data.intro.edges[0].node.html });
+
+  return <div>
       <Introduction />
-      
+
       <MainSection title="About">
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores
-          magni molestias ipsa illum. Eaque distinctio obcaecati iste quam
-          pariatur vitae consequuntur accusamus enim ut deleniti!
-        </p>
-        <p>
-          Neque ut ipsa exercitationem culpa? Lorem ipsum dolor sit, amet
-          consectetur adipisicing elit. Maiores magni molestias ipsa illum.
-          Eaque distinctio obcaecati iste quam pariatur vitae consequuntur
-          accusamus enim ut deleniti! Neque ut ipsa exercitationem culpa?
-        </p>
+        <div dangerouslySetInnerHTML = {createMarkup()} />
+
         <SimpleButton gatsbyLink={true} link="/about/" content="Read More" />
       </MainSection>
 
       <MainSection title="Projects">
-        { newProjects }
+        {newProjects}
         <SimpleButton gatsbyLink={true} link="/work/" content="All Projects" />
       </MainSection>
 
-      <MainSection title="Skills">
-        { renderSkills }
-      </MainSection>
+      <MainSection title="Skills">{renderSkills}</MainSection>
 
       <MainSection title="Education">
         {renderEducation}
@@ -69,12 +58,8 @@ const Home = (props) => {
         <SimpleButton gatsbyLink={false} link={resumeFile} content="View My Resume" />
       </MainSection>
 
-      <EndSection title="Experience">
-        {renderWork}
-      </EndSection>
-
+      <EndSection title="Experience">{renderWork}</EndSection>
     </div>
-  )
 }
 
 export default Home
@@ -83,6 +68,13 @@ export default Home
 
 export const IndexQuery = graphql`
          query HomeQuery {
+           intro: allMarkdownRemark(filter: { frontmatter: { type: { eq: "intro" } } } ) {
+             edges {
+               node {
+                 html
+               }
+             }
+           }
            projects: allMarkdownRemark(filter: { frontmatter: { type: { eq: "project" } } }, limit: 3) {
              edges {
                node {
