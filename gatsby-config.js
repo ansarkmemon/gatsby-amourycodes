@@ -31,16 +31,25 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-102082183-2",
-        // Puts tracking script in the head instead of the body
+        trackingId: 'UA-102082183-2',
         head: true,
-        // Setting this parameter is optional
         anonymize: true,
-        // Setting this parameter is also optional
         respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
+        exclude: ['/preview/**', '/do-not-track/me/too/'],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Amoury - Full-Stack Developer',
+        short_name: 'Amoury',
+        start_url: '/',
+        background_color: '#0b2027',
+        theme_color: '#4cff00',
+        display: 'minimal-ui',
+        icon: 'src/assets/main-logo.png', // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 }
