@@ -61,7 +61,7 @@ const Footer = () => {
           </a>
         </ContactText>
         <ContactText>
-          <a href="www.linkedin.com/in/amoury" target="_blank" style={linkStyle}>
+          <a href="https://www.linkedin.com/in/amoury" target="_blank" style={linkStyle}>
             LinkedIn
           </a>
         </ContactText>
