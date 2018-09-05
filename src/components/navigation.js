@@ -13,7 +13,7 @@ const List = styled.ul`
   max-width: 90%;
   display: flex;
   margin-top: 20px;
-  padding: 10px 0;
+  padding: 10px 0 10px 10px;
   justify-content: flex-end;
 `;
 
@@ -31,11 +31,6 @@ const ListItem = styled.li`
     color: ${neonGreen};
     padding: 0 7px;
   }
-`
-
-const Slash = styled.span`
-  color: ${ neonGreen };
-  font-weight: 700;
 `
 
 const LinkStyle = {
