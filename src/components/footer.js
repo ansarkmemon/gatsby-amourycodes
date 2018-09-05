@@ -61,17 +61,32 @@ const Footer = () => {
           </a>
         </ContactText>
         <ContactText>
-          <a href="https://www.linkedin.com/in/amoury" target="_blank" style={linkStyle}>
+          <a
+            href="https://www.linkedin.com/in/amoury"
+            target="_blank"
+            style={linkStyle}
+            rel="noreferrer"
+          >
             LinkedIn
           </a>
         </ContactText>
         <ContactText>
-          <a href="https://github.com/amoury" target="_blank" style={linkStyle}>
+          <a
+            href="https://github.com/amoury"
+            target="_blank"
+            style={linkStyle}
+            rel="noreferrer"
+          >
             Github
           </a>
         </ContactText>
         <ContactText>
-          <a href="https://codepen.io/amoury/" target="_blank" style={linkStyle}>
+          <a
+            href="https://codepen.io/amoury/"
+            target="_blank"
+            style={linkStyle}
+            rel="noreferrer"
+          >
             Codepen
           </a>
         </ContactText>

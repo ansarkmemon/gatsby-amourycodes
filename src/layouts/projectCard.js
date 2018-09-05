@@ -83,7 +83,7 @@ const ProjectCard = (props) => {
       <OverlayCard {...props.project.image}></OverlayCard>
         <ContentBox>
           <ProjectTitle>
-            <a href={siteLink} target="_blank" style={ProjectLink}>
+            <a href={siteLink} target="_blank" style={ProjectLink} rel="noreferrer">
               {title}
             </a>
           </ProjectTitle>
