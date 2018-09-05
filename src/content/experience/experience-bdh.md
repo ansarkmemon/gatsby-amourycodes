@@ -1,6 +1,6 @@
 ---
 id: "002"
-order: "2"
+order: 2
 type: "experience"
 degreeTitle: 'Product Manager'
 duration: '2013 - 2015'

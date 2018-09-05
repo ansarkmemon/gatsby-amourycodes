@@ -18,10 +18,20 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  color: ${ cream };
-  padding: 0 10px;
-  margin-bottom: 0; 
-`;
+  color: ${cream};
+  padding: 0 3px;
+  margin-bottom: 0;
+
+  &:last-child:after {
+    content: '';
+  }
+
+  &:after {
+    content: '/';
+    color: ${neonGreen};
+    padding: 0 7px;
+  }
+`
 
 const Slash = styled.span`
   color: ${ neonGreen };
@@ -35,30 +45,20 @@ const LinkStyle = {
 };
 
 
+const navigationItems = ['About', 'Work', 'Contact'];
+
+const renderNavItems = navigationItems.map( item => {
+  return <ListItem key={item}>
+    <Link to={`/${item.toLowerCase()}/`} style={LinkStyle} activeClassName="active">
+      {item}
+    </Link>
+  </ListItem>
+})
+
 const Navigation = () => {
   return <div style={{ position: "fixed", right: "5%", top:"5%", zIndex: '50' }}>
       <List>
-        <ListItem>
-          <Link to="/about/" style={LinkStyle} activeClassName="active">
-            About
-          </Link>
-        </ListItem>
-
-        <Slash> / </Slash>
-
-        <ListItem>
-          <Link to="/work/" style={LinkStyle} activeClassName="active">
-            Work
-          </Link>
-        </ListItem>
-
-        <Slash> / </Slash>
-
-        <ListItem>
-          <Link to="/notes/" style={LinkStyle} activeClassName="active">
-            Notes
-          </Link>
-        </ListItem>
+        { renderNavItems }
       </List>
     </div>
 }

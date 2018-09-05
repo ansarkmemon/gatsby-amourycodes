@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 
 import './index.css';
+import favicon from '../assets/main-logo.png'
 import Navigation from '../components/navigation';
 import Footer from '../components/footer';
 import MainLogo from '../assets/main-logo';
@@ -15,6 +16,9 @@ const Layout = ({ children, data }) => (
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
+      ]}
+      link={[
+        { rel: 'shortcut icon', type: 'image/png', href: `${favicon}`}
       ]}
     />
     

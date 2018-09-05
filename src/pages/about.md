@@ -57,3 +57,4 @@ Books that <span class="green-highlight">I love -</span>
 - [Edx](https://courses.edx.org/u/Amoury) 
 - [Frontend Masters](https://frontendmasters.com/)
 - [FreeCodeCamp](https://www.freecodecamp.org/amoury)
+- [Udacity](https://www.udacity.com)
