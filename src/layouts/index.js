@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
 
-import './index.css'
+import './index.css';
 import Navigation from '../components/navigation';
 import Footer from '../components/footer';
+import MainLogo from '../assets/main-logo';
 
 const Layout = ({ children, data }) => (
   <div>
@@ -15,6 +17,10 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
+    
+    <Link to="/">
+      <MainLogo />
+    </Link>
     <Navigation />
     <div
       style={{

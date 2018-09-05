@@ -10,7 +10,7 @@ import resume from '../assets/files/2018_Ind_noi_CV Design.pdf';
 const Grid = styled.div`
   width: 100%;
   min-height: 100vh;
-  margin-top: 40vh;
+  margin-top: 30vh;
   display: flex;
   flex-direction: column;
   
@@ -26,7 +26,7 @@ const Column = styled.div`
 `
 
 const TitleBox = styled.div`
-  margin-top: 10vh;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;

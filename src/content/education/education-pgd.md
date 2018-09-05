@@ -1,5 +1,6 @@
 ---
 id: "001"
+order: 3
 type: "education"
 degreeTitle: 'PGD in Software Engineering'
 duration: '2018 - 2019'

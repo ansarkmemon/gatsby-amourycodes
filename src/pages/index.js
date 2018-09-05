@@ -11,6 +11,8 @@ import EducationCard from '../layouts/educationCard';
 import EndSection from '../layouts/endSection';
 
 const Home = (props) => {
+  console.log(props.data);
+  if(!props.data) return <div>"Error"</div>
   const { education, projects, work, skills } = props.data;
 
   const newProjects = projects.edges.map ( project => {
@@ -97,7 +99,7 @@ export const IndexQuery = graphql`
              }
            }
 
-           education: allMarkdownRemark(filter: { frontmatter: { type: { eq: "education" } } }) {
+           education: allMarkdownRemark(filter: { frontmatter: { type: { eq: "education" } } }, sort: { fields: [frontmatter___order], order: DESC }) {
              edges {
                node {
                  frontmatter {
@@ -110,7 +112,7 @@ export const IndexQuery = graphql`
              }
            }
 
-           work: allMarkdownRemark(filter: { frontmatter: { type: { eq: "experience" } } }) {
+           work: allMarkdownRemark(filter: { frontmatter: { type: { eq: "experience" } } }, sort: { fields: [frontmatter___order], order: DESC }) {
              edges {
                node {
                  frontmatter {
@@ -127,8 +129,8 @@ export const IndexQuery = graphql`
              edges {
                node {
                  frontmatter {
-                    title
-                    skillList
+                   title
+                   skillList
                  }
                }
              }
