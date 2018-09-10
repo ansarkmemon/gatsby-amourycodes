@@ -1,6 +1,7 @@
 import React from 'react'
-import styled from 'styled-components';
-import { cream, fontFamily } from '../layouts/variables';
+import styled from 'styled-components'
+import PageTransition from 'gatsby-plugin-page-transitions'
+import { cream, fontFamily } from '../layouts/variables'
 
 const ContactWrapper = styled.div`
   min-height: 70vh;
@@ -17,17 +18,21 @@ const Content = styled.div`
 `
 
 const Contact = () => {
-  return <ContactWrapper>
-      <Content>
-        <p>Looking forward to hearing from you. </p>
-        <span className="green-highlight">Email - </span>
-        amourycodes@gmail.com
-        <br />
-        <span className="green-highlight">Phone - </span>
-        (971) 52 913 9295
-        <br />
-      </Content>
-    </ContactWrapper>
+  return (
+    <PageTransition transitionTime={500}>
+      <ContactWrapper>
+        <Content>
+          <p>Looking forward to hearing from you. </p>
+          <span className="green-highlight">Email - </span>
+          amourycodes@gmail.com
+          <br />
+          <span className="green-highlight">Phone - </span>
+          (971) 52 913 9295
+          <br />
+        </Content>
+      </ContactWrapper>
+    </PageTransition>
+  )
 }
 
 export default Contact

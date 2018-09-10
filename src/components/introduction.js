@@ -49,7 +49,7 @@ const Introduction = () => {
           <strong style={{ fontWeight: '500' }}>
             Ansar Memon <Slash> / </Slash>Amoury
           </strong>{' '}
-          _ a full-stack software engineer with an eye for well designed
+          <Slash> > </Slash> a full-stack software engineer with an eye for well designed
           interfaces &amp; experiences
         </p>
       </Text>

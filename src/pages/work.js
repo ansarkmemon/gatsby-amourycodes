@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PageTransition from 'gatsby-plugin-page-transitions'
 
 import LargeProjectCard from '../layouts/largeProjectCard';
 
@@ -13,14 +14,16 @@ const MainWrapper = styled.div`
 `
 const Work = ({ data }) => {
   return (
-    <MainWrapper>
-      
-      { data.allMarkdownRemark.edges.map( project => {
-        const { frontmatter } = project.node;
-        return <LargeProjectCard key={frontmatter.id} project={frontmatter} />
-      }) }
-      
-    </MainWrapper>
+    <PageTransition transitionTime={500}>
+      <MainWrapper>
+        
+        { data.allMarkdownRemark.edges.map( project => {
+          const { frontmatter } = project.node;
+          return <LargeProjectCard key={frontmatter.id} project={frontmatter} />
+        }) }
+        
+      </MainWrapper>
+    </PageTransition>
   )
 }
 
