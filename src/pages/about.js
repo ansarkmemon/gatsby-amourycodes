@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faCodepen, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import PageTransition from 'gatsby-plugin-page-transitions';
 
-
 import { fontFamily, cream, neonGreen } from '../layouts/variables';
 import SimpleButton from '../components/simpleButton';
 import resume from '../assets/files/2018_Ind_noi_CV Design.pdf';
@@ -113,3 +112,4 @@ export const AboutQuery = graphql`
    }
   }
 `
+

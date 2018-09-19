@@ -28,7 +28,7 @@ const OverlayCard = styled.div`
   top: 0;
   background-image: ${ props =>
     props.publicURL
-      ? `linear-gradient(rgba(11, 32, 39, 0.8), rgba(11, 32, 39, 0.8)), url(${ props.publicURL })`
+      ? `linear-gradient(rgba(11, 32, 39, 0.7), rgba(11, 32, 39, 0.7)), url(${ props.publicURL })`
       : 'none'};
   background-repeat: no-repeat;
   background-position: center;
@@ -39,7 +39,7 @@ const OverlayCard = styled.div`
     transform: scale(1.2);
     background-image: ${ props =>
       props.publicURL
-        ? `linear-gradient(rgba(11, 32, 39, 0.5), rgba(11, 32, 39, 0.5)), url(${ props.publicURL })`
+        ? `linear-gradient(rgba(11, 32, 39, 0.2), rgba(11, 32, 39, 0.2)), url(${ props.publicURL })`
         : 'none'};
   }
 `
