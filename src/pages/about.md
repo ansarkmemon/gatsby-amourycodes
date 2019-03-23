@@ -29,6 +29,7 @@ GraphQl <br/>
 Apollo <br/>
 NodeJS <br/>
 MongoDB <br/>
+NextJS <br/>
 
 <h2 class="about_section-title">Technologies I Have Used</h2>
 

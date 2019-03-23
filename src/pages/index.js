@@ -50,11 +50,8 @@ const Home = props => {
           <div dangerouslySetInnerHTML={createMarkup()} />
           <SimpleButton gatsbyLink={true} link="/about/" content="Read More" />
         </MainSection>
-
-        <MainSection title="Projects">
-          {newProjects}
-          <SimpleButton gatsbyLink={true} link="/work/" content="All Projects" />
-        </MainSection>
+	  
+	  	<MainSection title="Experience">{renderWork}</MainSection>
 
         <MainSection title="Skills">{renderSkills}</MainSection>
 
@@ -68,7 +65,11 @@ const Home = props => {
           />
         </MainSection>
 
-        <EndSection title="Experience">{renderWork}</EndSection>
+		<EndSection title="Projects">
+		  {newProjects}
+		  <SimpleButton gatsbyLink={true} link="/work/" content="All Projects" />
+		</EndSection>
+
       </div>
     </PageTransition>
   )

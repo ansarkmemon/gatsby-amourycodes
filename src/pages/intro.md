@@ -7,4 +7,4 @@ I transitioned my career into the web as a <span class="green-highlight">UI/UX d
 
 I love learning and working with latest technologies if they improve the <span class="green-highlight">user experience</span> and make the web a better place. 
 
-I am <span class="green-highlight">looking to join</span> the team of talented developers on a full time basis, that are working towards changing the world. 
+I am currently enjoying my role as a <span class="green-highlight">Frontend Engineer at Namshi.com</span> and learning a great deal on a daily basis from a bunch of talented engineers.
