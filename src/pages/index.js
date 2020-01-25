@@ -6,7 +6,7 @@ import SimpleButton from '../components/simpleButton'
 import MainSection from '../layouts/mainSection'
 import ProjectCard from '../layouts/projectCard'
 import SkillAreaCard from '../layouts/skillAreaCard'
-import resumeFile from '../assets/files/2018_Ind_noi_CV Design.pdf'
+import resumeFile from '../assets/files/2019_noi_CV.pdf'
 import EducationCard from '../layouts/educationCard'
 import EndSection from '../layouts/endSection'
 
