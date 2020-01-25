@@ -26,7 +26,6 @@ const Slash = styled.span`
 
 const Text = styled.div`
   position: absolute;
-  opacity: 20%;
   top: 50%;
   transform: translateY(-50%);
 `

@@ -141,6 +141,7 @@ export const IndexQuery = graphql`
 
     skills: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "skills" } } }
+      sort: { fields: [frontmatter___order], order: ASC}
     ) {
       edges {
         node {

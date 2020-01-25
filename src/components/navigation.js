@@ -10,7 +10,6 @@ const List = styled.ul`
   background: ${darkBlue};
   list-style: none;
   font-family: ${fontFamily};
-  max-width: 90%;
   display: flex;
   margin-top: 20px;
   padding: 10px 0 10px 10px;
